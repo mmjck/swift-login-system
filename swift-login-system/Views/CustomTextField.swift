@@ -31,8 +31,24 @@ class CustomTextField: UITextField {
         self.autocorrectionType = .no
         self.autocapitalizationType = .none
         
+        self.leftViewMode = .always
+        self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: self.frame.size.height))
+
         
-        
+        switch fieldType {
+        case .username:
+            self.placeholder = "Name"
+            
+        case .password:
+            self.placeholder = "Password"
+            self.textContentType = .oneTimeCode
+            self.isSecureTextEntry = true
+            
+        case .email:
+            self.placeholder = "E-mail"
+            self.keyboardType = .emailAddress
+            self.textContentType = .emailAddress
+        }
         
         
     }
