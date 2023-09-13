@@ -16,6 +16,8 @@
 		0D2208C329F8BFD400B545BE /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208C229F8BFD400B545BE /* ForgotPasswordController.swift */; };
 		0D2208C529F8BFE300B545BE /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208C429F8BFE300B545BE /* RegisterController.swift */; };
 		0D2208C729F8C17B00B545BE /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208C629F8C17B00B545BE /* HomeController.swift */; };
+		0D4750012AB1584A00D62D52 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4750002AB1584A00D62D52 /* AuthHeaderView.swift */; };
+		0D4750032AB15FC400D62D52 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4750022AB15FC400D62D52 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		0D2208C229F8BFD400B545BE /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		0D2208C429F8BFE300B545BE /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		0D2208C629F8C17B00B545BE /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		0D4750002AB1584A00D62D52 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		0D4750022AB15FC400D62D52 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 		0D2208C829F8C19000B545BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D4750002AB1584A00D62D52 /* AuthHeaderView.swift */,
+				0D4750022AB15FC400D62D52 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 				0D2208C729F8C17B00B545BE /* HomeController.swift in Sources */,
 				0D2208C529F8BFE300B545BE /* RegisterController.swift in Sources */,
 				0D2208B029F8BD6E00B545BE /* ViewController.swift in Sources */,
+				0D4750012AB1584A00D62D52 /* AuthHeaderView.swift in Sources */,
 				0D2208AC29F8BD6E00B545BE /* AppDelegate.swift in Sources */,
 				0D2208AE29F8BD6E00B545BE /* SceneDelegate.swift in Sources */,
+				0D4750032AB15FC400D62D52 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
