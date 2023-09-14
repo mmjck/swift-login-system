@@ -19,6 +19,7 @@
 		0D4750012AB1584A00D62D52 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4750002AB1584A00D62D52 /* AuthHeaderView.swift */; };
 		0D4750032AB15FC400D62D52 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4750022AB15FC400D62D52 /* CustomTextField.swift */; };
 		0D4750052AB2301600D62D52 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4750042AB2301600D62D52 /* CustomButton.swift */; };
+		0D4750072AB2A55800D62D52 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4750062AB2A55800D62D52 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0D4750002AB1584A00D62D52 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		0D4750022AB15FC400D62D52 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0D4750042AB2301600D62D52 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		0D4750062AB2A55800D62D52 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				0D2208C229F8BFD400B545BE /* ForgotPasswordController.swift */,
 				0D2208C429F8BFE300B545BE /* RegisterController.swift */,
 				0D2208B929F8BD7000B545BE /* Info.plist */,
+				0D4750062AB2A55800D62D52 /* WebViewController.swift */,
 			);
 			path = "swift-login-system";
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2208C129F8BFC000B545BE /* LoginController.swift in Sources */,
+				0D4750072AB2A55800D62D52 /* WebViewController.swift in Sources */,
 				0D2208C329F8BFD400B545BE /* ForgotPasswordController.swift in Sources */,
 				0D2208C729F8C17B00B545BE /* HomeController.swift in Sources */,
 				0D2208C529F8BFE300B545BE /* RegisterController.swift in Sources */,
