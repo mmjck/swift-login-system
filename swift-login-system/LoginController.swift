@@ -12,25 +12,29 @@ class LoginController: UIViewController {
     private let headerView = AuthHeaderView(title: "Sign in", subTitle: "Sign in to your account")
     
     
-    private let usernameField = CustomTextField(fieldType: .username)
+    private let usernameField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
     
     
     private let signInButton = CustomButton(title: "Sign In", hasBackground: true, fontSize: .big)
     
-    private let signUpButton = CustomButton(title: "New USer? Create Account", fontSize: .med)
+    private let signUpButton = CustomButton(title: "New us user? Create Account", fontSize: .med)
     private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontSize: .med)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .systemBackground
         self.setupUI()
         
-        self.signInButton.addTarget(  self, action: #selector(didTapSignIn), for: .touchUpInside)
+        self.setTaps()
+    }
+    
+    private func setTaps(){
+        self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         
-        self.signUpButton.addTarget(  self, action: #selector(didTapSignUp), for: .touchUpInside)
+        self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         
-        self.forgotPasswordButton.addTarget(  self, action: #selector(didTapForgotPassword), for: .touchUpInside)
+        self.forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
     
     //    override func viewWillAppear(_ animated: Bool) {
@@ -99,7 +103,7 @@ class LoginController: UIViewController {
         ])
         
         
-        self.view.backgroundColor = .systemBackground
+        
         
         
     }
@@ -109,8 +113,9 @@ class LoginController: UIViewController {
 extension LoginController {
     @objc private func didTapSignIn(){
         let vc = HomeController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false, completion: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: false, completion: nil)
     }
     
     @objc private func didTapSignUp(){

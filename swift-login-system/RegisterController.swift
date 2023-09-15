@@ -22,13 +22,25 @@ class RegisterController: UIViewController {
     private let signInButton = CustomButton(title: "Already have an account? Sign In", fontSize: .med)
     
     private let termsTextView: UITextView = {
+        
+        
+        
+        let attributeString = NSMutableAttributedString(string: "By creating an accnount, you agree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy")
+        
+        attributeString.addAttribute(.link, value: "terms://termsAndCondition", range: (attributeString.string as NSString).range(of: "Terms & Conditions"))
+        
+        
+        attributeString.addAttribute(.link, value: "privacy://privacePolicy", range: (attributeString.string as NSString).range(of: "Privacy Policy"))
+        
         let textView = UITextView()
         
-        textView.text = "By creating an accnount, you agree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy"
+        textView.linkTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        textView.attributedText = attributeString
         textView.backgroundColor = .clear
         textView.textColor = .label
         textView.isSelectable = true
         textView.isEditable = false
+        textView.delaysContentTouches = false
         textView.isScrollEnabled = false
         return textView
     }()
@@ -37,7 +49,7 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         
         self.setupUI()
-        
+        self.termsTextView.delegate = self
         self.signInButton.addTarget(  self, action: #selector(didTapSignIn), for: .touchUpInside)
         self.signUpButton.addTarget(  self, action: #selector(didTapSignUp), for: .touchUpInside)
        
@@ -112,9 +124,6 @@ class RegisterController: UIViewController {
             self.signInButton.heightAnchor.constraint(equalToConstant: 44),
             self.signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
-          
-           
-            
         ])
         
         
@@ -137,3 +146,30 @@ extension RegisterController {
     }
 }
 
+
+
+extension RegisterController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        
+        if URL.scheme == "terms" {
+            self.showWebViewerController(with: "https://policies.google.com/terms?hl=en")
+        }else {
+            self.showWebViewerController(with: "https://policies.google.com/privacy?hl=en")
+        }
+        return true
+    }
+    
+    
+    private func showWebViewerController(with urlString: String) {
+        let vc = WebViewController(with: urlString)
+        
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        textView.delegate = nil
+        textView.selectedTextRange = nil
+        textView.delegate = self
+    }
+}
