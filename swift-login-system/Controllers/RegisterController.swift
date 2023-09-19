@@ -50,8 +50,8 @@ class RegisterController: UIViewController {
         
         self.setupUI()
         self.termsTextView.delegate = self
-        self.signInButton.addTarget(  self, action: #selector(didTapSignIn), for: .touchUpInside)
-        self.signUpButton.addTarget(  self, action: #selector(didTapSignUp), for: .touchUpInside)
+        self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         
     }
     
@@ -140,28 +140,32 @@ extension RegisterController {
     }
     
     @objc private func didTapSignUp(){
-        let userRequest = RegisterUserRequest(
-            email: self.emailField.text ?? "", username: self.usernameField.text ?? "", password: self.passwordField.text ?? "")
+        print("called")
         
-//        
-//        if !Validator.isValidUsername(for: userRequest.username) {
-//            AlertManager.showInvalidUserNameAlert(on: self)
-//            return
-//        }
-//        
-//        if !Validator.isValidEmail(for: userRequest.email) {
-//            AlertManager.showInvalidEmailAlert(on: self)
-//            return
-//        }
-//        
-//        if !Validator.isValidUsername(for: userRequest.username) {
-//            AlertManager.showInvalidPasswordAlert(on: self)
-//            return
-//        }
+        let userRequest = RegisterUserRequest(
+            email: self.emailField.text ?? "",
+            username: self.usernameField.text ?? "",
+            password: self.passwordField.text ?? ""
+        )
+        
+        //
+        //        if !Validator.isValidUsername(for: userRequest.username) {
+        //            AlertManager.showInvalidUserNameAlert(on: self)
+        //            return
+        //        }
+        //
+        //        if !Validator.isValidEmail(for: userRequest.email) {
+        //            AlertManager.showInvalidEmailAlert(on: self)
+        //            return
+        //        }
+        //
+        //        if !Validator.isValidUsername(for: userRequest.username) {
+        //            AlertManager.showInvalidPasswordAlert(on: self)
+        //            return
+        //        }
         
         
         guard let request = Endpoint.createAccount(userRequest: userRequest).request else { return }
-        
         
         AuthService.createAccount(request: request) {
             result in
@@ -173,9 +177,6 @@ extension RegisterController {
             }
         }
         
-        //        let webViewer = WebViewController(with: "https://www.memeatlas.com/images/pepes/pepe-fancy-smoking-cigar-served-by-seething-wojak.jpg")
-        //        let nav = UINavigationController(rootViewController: webViewer)
-        //               self.present(nav, animated: true, completion: nil)
     }
 }
 

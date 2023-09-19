@@ -18,13 +18,6 @@ class AuthService {
                               (Result<String, Error>) -> Void){
         URLSession.shared.dataTask(with: request) {
             data, response, error in
-            
-            
-            //            if let response = response as? HTTPURLResponse {
-            //
-            //            }
-            
-            
             guard let data = data else  {
                 if let error = error  {
                     completion(.failure(ServiceError.serverError(error.localizedDescription)))
@@ -35,8 +28,6 @@ class AuthService {
                 return
                 
             }
-            
-            
             let decoder = JSONDecoder()
             
             if let sucessMessage = try? decoder.decode(SucessResponse.self, from: data) {
@@ -45,9 +36,11 @@ class AuthService {
 
             } else if let errorMessage = try?
                         decoder.decode(ErrorResponse.self, from: data) {
+                print("error")
                 completion(.failure(ServiceError.decodingError(errorMessage.error )))
                 return
             } else {
+                print("error 2")
                 completion(.failure(ServiceError.decodingError()))
                 return
             }

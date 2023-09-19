@@ -10,14 +10,18 @@ import Foundation
 
 enum Endpoint  {
     
-    case createAccount(path: String = "auth/signup", userRequest: RegisterUserRequest)
+    case createAccount(path: String = "/auth/signup", userRequest: RegisterUserRequest)
 //    case createAccount(path: String = "auth/singin")
     
     var request: URLRequest? {
+        print("called request")
+        
         guard let url = self.url else {
             return nil
         }
-        
+        print("URL")
+        print(url)
+
         var request = URLRequest(url: url)
         request.httpMethod = self.httpMethod
         request.addValues(for: self)
@@ -30,11 +34,15 @@ enum Endpoint  {
     
     private var url: URL? {
         var components = URLComponents()
-        
+        print("component")
         components.scheme = Constants.scheme
         components.host = Constants.baseURL
         components.port = Constants.port
+        
+        print(self.path)
+
         components.path = self.path
+        
         return components.url
     }
     
@@ -43,6 +51,8 @@ enum Endpoint  {
     private var path: String {
         switch self {
         case .createAccount(let path, _):
+            print("path")
+            print(path)
             return path
         }
     }
