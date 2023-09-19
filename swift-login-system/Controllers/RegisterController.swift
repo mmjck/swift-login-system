@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterController: UIViewController {
-
+    
     
     private let headerView = AuthHeaderView(title: "Sign up", subTitle: "Create your account")
     
@@ -52,7 +52,7 @@ class RegisterController: UIViewController {
         self.termsTextView.delegate = self
         self.signInButton.addTarget(  self, action: #selector(didTapSignIn), for: .touchUpInside)
         self.signUpButton.addTarget(  self, action: #selector(didTapSignUp), for: .touchUpInside)
-       
+        
     }
     
     //    override func viewWillAppear(_ animated: Bool) {
@@ -76,13 +76,13 @@ class RegisterController: UIViewController {
         self.usernameField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordField.translatesAutoresizingMaskIntoConstraints = false
         self.emailField.translatesAutoresizingMaskIntoConstraints = false
-
+        
         
         self.signInButton.translatesAutoresizingMaskIntoConstraints = false
         self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         
-
+        
         
         NSLayoutConstraint.activate([
             self.headerView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
@@ -106,7 +106,7 @@ class RegisterController: UIViewController {
             self.passwordField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             self.passwordField.heightAnchor.constraint(equalToConstant: 55),
             self.passwordField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-         
+            
             
             self.signUpButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
             self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
@@ -140,9 +140,42 @@ extension RegisterController {
     }
     
     @objc private func didTapSignUp(){
-        let webViewer = WebViewController(with: "https://www.memeatlas.com/images/pepes/pepe-fancy-smoking-cigar-served-by-seething-wojak.jpg")
-        let nav = UINavigationController(rootViewController: webViewer)
-               self.present(nav, animated: true, completion: nil)
+        let userRequest = RegisterUserRequest(
+            email: self.emailField.text ?? "", username: self.usernameField.text ?? "", password: self.passwordField.text ?? "")
+        
+//        
+//        if !Validator.isValidUsername(for: userRequest.username) {
+//            AlertManager.showInvalidUserNameAlert(on: self)
+//            return
+//        }
+//        
+//        if !Validator.isValidEmail(for: userRequest.email) {
+//            AlertManager.showInvalidEmailAlert(on: self)
+//            return
+//        }
+//        
+//        if !Validator.isValidUsername(for: userRequest.username) {
+//            AlertManager.showInvalidPasswordAlert(on: self)
+//            return
+//        }
+        
+        
+        guard let request = Endpoint.createAccount(userRequest: userRequest).request else { return }
+        
+        
+        AuthService.createAccount(request: request) {
+            result in
+            switch result {
+            case .success(_):
+                print("success")
+            case .failure(_):
+                print("error")
+            }
+        }
+        
+        //        let webViewer = WebViewController(with: "https://www.memeatlas.com/images/pepes/pepe-fancy-smoking-cigar-served-by-seething-wojak.jpg")
+        //        let nav = UINavigationController(rootViewController: webViewer)
+        //               self.present(nav, animated: true, completion: nil)
     }
 }
 

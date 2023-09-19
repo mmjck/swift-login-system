@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
 router.get("/index", verifyJWT,  authController.index);
 
-router.post("/signup", authController.create);
-router.post("/singin", authController.signin);
+router.post("auth/signup", authController.create);
+router.post("auth/singin", authController.signin);
 
 export default router;

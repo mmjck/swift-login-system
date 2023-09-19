@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0D1BDCCE2AB92F2F007894A1 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCCD2AB92F2F007894A1 /* AlertManager.swift */; };
+		0D1BDCD02AB9D44D007894A1 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCCF2AB9D44D007894A1 /* Validator.swift */; };
+		0D1BDCD42AB9D4E3007894A1 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCD32AB9D4E3007894A1 /* Endpoints.swift */; };
+		0D1BDCD62AB9D511007894A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCD52AB9D511007894A1 /* Constants.swift */; };
+		0D1BDCD82AB9D788007894A1 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCD72AB9D788007894A1 /* HTTP.swift */; };
+		0D1BDCDA2AB9DD6E007894A1 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCD92AB9DD6E007894A1 /* RegisterUserRequest.swift */; };
+		0D1BDCDC2AB9DFC9007894A1 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCDB2AB9DFC9007894A1 /* ServerResponse.swift */; };
+		0D1BDCDE2AB9E126007894A1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCDD2AB9E126007894A1 /* AuthService.swift */; };
 		0D2208AC29F8BD6E00B545BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208AB29F8BD6E00B545BE /* AppDelegate.swift */; };
 		0D2208AE29F8BD6E00B545BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208AD29F8BD6E00B545BE /* SceneDelegate.swift */; };
 		0D2208B029F8BD6E00B545BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208AF29F8BD6E00B545BE /* ViewController.swift */; };
@@ -25,6 +32,13 @@
 
 /* Begin PBXFileReference section */
 		0D1BDCCD2AB92F2F007894A1 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		0D1BDCCF2AB9D44D007894A1 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		0D1BDCD32AB9D4E3007894A1 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		0D1BDCD52AB9D511007894A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0D1BDCD72AB9D788007894A1 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		0D1BDCD92AB9DD6E007894A1 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		0D1BDCDB2AB9DFC9007894A1 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		0D1BDCDD2AB9E126007894A1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0D2208A829F8BD6E00B545BE /* swift-login-system.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-login-system.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2208AB29F8BD6E00B545BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D2208AD29F8BD6E00B545BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +79,25 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		0D1BDCD12AB9D4AC007894A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D1BDCD92AB9DD6E007894A1 /* RegisterUserRequest.swift */,
+				0D1BDCDB2AB9DFC9007894A1 /* ServerResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D1BDCD22AB9D4B9007894A1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0D1BDCD32AB9D4E3007894A1 /* Endpoints.swift */,
+				0D1BDCD72AB9D788007894A1 /* HTTP.swift */,
+				0D1BDCDD2AB9E126007894A1 /* AuthService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		0D22089F29F8BD6E00B545BE = {
 			isa = PBXGroup;
 			children = (
@@ -84,12 +117,16 @@
 		0D2208AA29F8BD6E00B545BE /* swift-login-system */ = {
 			isa = PBXGroup;
 			children = (
+				0D1BDCD22AB9D4B9007894A1 /* API */,
+				0D1BDCD12AB9D4AC007894A1 /* Models */,
 				0D1BDCCC2AB92F09007894A1 /* Controllers */,
 				0D2208C829F8C19000B545BE /* Views */,
 				0D2208BF29F8BF7300B545BE /* Supporting */,
 				0D2208B929F8BD7000B545BE /* Info.plist */,
+				0D1BDCCF2AB9D44D007894A1 /* Validator.swift */,
 				0D4750062AB2A55800D62D52 /* WebViewController.swift */,
 				0D1BDCCD2AB92F2F007894A1 /* AlertManager.swift */,
+				0D1BDCD52AB9D511007894A1 /* Constants.swift */,
 			);
 			path = "swift-login-system";
 			sourceTree = "<group>";
@@ -188,12 +225,19 @@
 				0D2208C129F8BFC000B545BE /* LoginController.swift in Sources */,
 				0D4750072AB2A55800D62D52 /* WebViewController.swift in Sources */,
 				0D2208C329F8BFD400B545BE /* ForgotPasswordController.swift in Sources */,
+				0D1BDCDA2AB9DD6E007894A1 /* RegisterUserRequest.swift in Sources */,
 				0D2208C729F8C17B00B545BE /* HomeController.swift in Sources */,
+				0D1BDCD02AB9D44D007894A1 /* Validator.swift in Sources */,
+				0D1BDCDE2AB9E126007894A1 /* AuthService.swift in Sources */,
+				0D1BDCD82AB9D788007894A1 /* HTTP.swift in Sources */,
+				0D1BDCD62AB9D511007894A1 /* Constants.swift in Sources */,
 				0D2208C529F8BFE300B545BE /* RegisterController.swift in Sources */,
 				0D4750052AB2301600D62D52 /* CustomButton.swift in Sources */,
 				0D2208B029F8BD6E00B545BE /* ViewController.swift in Sources */,
 				0D4750012AB1584A00D62D52 /* AuthHeaderView.swift in Sources */,
 				0D1BDCCE2AB92F2F007894A1 /* AlertManager.swift in Sources */,
+				0D1BDCDC2AB9DFC9007894A1 /* ServerResponse.swift in Sources */,
+				0D1BDCD42AB9D4E3007894A1 /* Endpoints.swift in Sources */,
 				0D2208AC29F8BD6E00B545BE /* AppDelegate.swift in Sources */,
 				0D2208AE29F8BD6E00B545BE /* SceneDelegate.swift in Sources */,
 				0D4750032AB15FC400D62D52 /* CustomTextField.swift in Sources */,

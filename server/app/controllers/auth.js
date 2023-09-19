@@ -23,8 +23,8 @@ const index = async(req, res) => {
 
 const signin = async(req, res) => { 
     try {
-        const {name, password, email} = req.body
-        console.log({name, password, email});
+        const {password, email} = req.body
+        console.log({password, email});
 
 
         const data = user.find((e) => e.email == email)
@@ -33,7 +33,7 @@ const signin = async(req, res) => {
 
             if(password == data.password){
                 const token = {
-                    accessToken: createAndAddJwtToRes(email, name, res)
+                    accessToken: createAndAddJwtToRes(email, data.name, res)
                 }
                 return res.status(201).json(token)
             }
