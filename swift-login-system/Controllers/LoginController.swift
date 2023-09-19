@@ -101,11 +101,6 @@ class LoginController: UIViewController {
             self.forgotPasswordButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
         ])
-        
-        
-        
-        
-        
     }
 }
 

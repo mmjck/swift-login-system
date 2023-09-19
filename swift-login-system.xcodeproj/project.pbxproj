@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1BDCCE2AB92F2F007894A1 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDCCD2AB92F2F007894A1 /* AlertManager.swift */; };
 		0D2208AC29F8BD6E00B545BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208AB29F8BD6E00B545BE /* AppDelegate.swift */; };
 		0D2208AE29F8BD6E00B545BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208AD29F8BD6E00B545BE /* SceneDelegate.swift */; };
 		0D2208B029F8BD6E00B545BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2208AF29F8BD6E00B545BE /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1BDCCD2AB92F2F007894A1 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		0D2208A829F8BD6E00B545BE /* swift-login-system.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-login-system.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2208AB29F8BD6E00B545BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D2208AD29F8BD6E00B545BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1BDCCC2AB92F09007894A1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D2208AF29F8BD6E00B545BE /* ViewController.swift */,
+				0D2208C029F8BFC000B545BE /* LoginController.swift */,
+				0D2208C629F8C17B00B545BE /* HomeController.swift */,
+				0D2208C229F8BFD400B545BE /* ForgotPasswordController.swift */,
+				0D2208C429F8BFE300B545BE /* RegisterController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		0D22089F29F8BD6E00B545BE = {
 			isa = PBXGroup;
 			children = (
@@ -70,15 +84,12 @@
 		0D2208AA29F8BD6E00B545BE /* swift-login-system */ = {
 			isa = PBXGroup;
 			children = (
+				0D1BDCCC2AB92F09007894A1 /* Controllers */,
 				0D2208C829F8C19000B545BE /* Views */,
 				0D2208BF29F8BF7300B545BE /* Supporting */,
-				0D2208AF29F8BD6E00B545BE /* ViewController.swift */,
-				0D2208C029F8BFC000B545BE /* LoginController.swift */,
-				0D2208C629F8C17B00B545BE /* HomeController.swift */,
-				0D2208C229F8BFD400B545BE /* ForgotPasswordController.swift */,
-				0D2208C429F8BFE300B545BE /* RegisterController.swift */,
 				0D2208B929F8BD7000B545BE /* Info.plist */,
 				0D4750062AB2A55800D62D52 /* WebViewController.swift */,
+				0D1BDCCD2AB92F2F007894A1 /* AlertManager.swift */,
 			);
 			path = "swift-login-system";
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 				0D4750052AB2301600D62D52 /* CustomButton.swift in Sources */,
 				0D2208B029F8BD6E00B545BE /* ViewController.swift in Sources */,
 				0D4750012AB1584A00D62D52 /* AuthHeaderView.swift in Sources */,
+				0D1BDCCE2AB92F2F007894A1 /* AlertManager.swift in Sources */,
 				0D2208AC29F8BD6E00B545BE /* AppDelegate.swift in Sources */,
 				0D2208AE29F8BD6E00B545BE /* SceneDelegate.swift in Sources */,
 				0D4750032AB15FC400D62D52 /* CustomTextField.swift in Sources */,
